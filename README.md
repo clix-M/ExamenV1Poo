@@ -1,4 +1,4 @@
-# ExamenV1Poo
+# ExamenV1Poo  Entrar a la carpeta src para ver los ejercicos resueltos
 Examen resuelto
 
 PRIMER EXAMEN PARCIAL POO
