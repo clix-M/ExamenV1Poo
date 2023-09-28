@@ -56,9 +56,23 @@ public class Ejer4 {
             default -> System.out.println("Tipo de silla no válido");
         }
 
-        // Mostrar el importe con un ejemplo
+        // Mostrar el importe 
 
         System.out.println("El importe es: " + importe);
+
+        // Mostrar el descuento
+        System.out.println("El descuento es: " + descuento);
+
+        // Mostrar el precio de la silla
+        System.out.println("El precio de la silla es: " + precioSilla);
+
+        // Mostrar la cantidad de sillas
+        System.out.println("La cantidad de sillas es: " + cantidadSillas);
+
+        // Mostrar el tipo de silla -
+        System.out.println("El tipo de silla es: " + tipoSilla);
+
+
 
     }
 }

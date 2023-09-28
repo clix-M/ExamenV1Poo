@@ -21,7 +21,13 @@ public class Tigre extends Felino {
     }
 
    // crear una funcion anonima
-    Function<String, String> funcion = (String nombre) -> { return "Hola " + nombre; };
+   Function<Integer, Integer> funcionAnonima = new Function<Integer, Integer>() {
+       @Override
+       public Integer apply(Integer integer) {
+           return integer * 2;
+       }
+   };
+   
 
 
 

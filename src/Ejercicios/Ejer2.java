@@ -53,9 +53,23 @@ public class Ejer2 {
         // Calcular el sueldo neto
         sueldoNeto = sueldoBruto - descuento;
 
-        // Mostrar el sueldo , mostrar categoría con un ejemplo
+        // Mostrar el sueldoneto
 
         System.out.println("El sueldo neto es: " + sueldoNeto);
+
+        // Mostrar el sueldo bruto
+        System.out.println("El sueldo bruto es: " + sueldoBruto);
+
+        // Mostrar el descuento
+        System.out.println("El descuento es: " + descuento);
+
+        // Mostrar la comisión
+        System.out.println("La comisión es: " + comision);
+
+        // Mostrar el sueldo básico
+        System.out.println("El sueldo básico es: " + sueldoBasico);
+
+        
 
 
     }
