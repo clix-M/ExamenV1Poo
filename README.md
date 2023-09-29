@@ -1,5 +1,9 @@
-# ExamenV1Poo  Entrar a la carpeta src para ver los ejercicos resueltos
-Examen resuelto
+
+# ExamenV1Poo  
+## Entrar a la carpeta src para ver los ejercicos resueltos
+
+# Entrar a la carpeta src para ver los ejercicos resueltos
+
 
 PRIMER EXAMEN PARCIAL POO
 
@@ -12,6 +16,8 @@ PRIMER EXAMEN PARCIAL POO
 ________________________________________________________________________________
 
 IMPLEMENTE LOS SIGUIENTES PROBLEMAS, EMPLEANDO METODOS CONSTRUCTORES VACIO Y CON PARAMETROS, METODO get() y set(). LOS ATRIBUTOS DEBEN SER PRIVADOS
+
+### Ejercicios estan dentro de la carpeta src/Ejercicios
 
 2.- Una empresa paga a sus vendedores un sueldo bruto que es igual a la suma de un sueldo básico de S/. 1250 más una comisión que es igual a un porcentaje del monto total vendido. El porcentaje por comisión depende de la categoría del vendedor de acuerdo a la siguiente tabla:
 
