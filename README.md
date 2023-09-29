@@ -2,8 +2,6 @@
 # ExamenV1Poo  
 ## Entrar a la carpeta src para ver los ejercicos resueltos
 
-# Entrar a la carpeta src para ver los ejercicos resueltos
-
 
 PRIMER EXAMEN PARCIAL POO
 
