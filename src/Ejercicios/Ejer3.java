@@ -9,22 +9,26 @@ public class Ejer3 {
         se les paga 15 soles por hora y los de clase “D”, 10 soles por hora.
          */
 
-        // Declarar variables
-        int horasTrabajadas = 0;
-        int sueldo = 0;
-        String clase = "A";
+        // Declarar la clase Trabajador
+        record Trabajador(String nombre, int horasTrabajadas, char clase) {}
+
+
+
+        // Crear un trabajador
+        Trabajador trabajador = new Trabajador("Juan", 40, 'A');
+
 
         // Calcular el sueldo
-        switch (clase) {
-            case "A" -> sueldo = 25 * horasTrabajadas;
-            case "B" -> sueldo = 20 * horasTrabajadas;
-            case "C" -> sueldo = 15 * horasTrabajadas;
-            case "D" -> sueldo = 10 * horasTrabajadas;
-            default -> System.out.println("Clase no válida");
-        }
+        double sueldo = switch (trabajador.clase()) {
+            case 'A' -> trabajador.horasTrabajadas() * 25;
+            case 'B' -> trabajador.horasTrabajadas() * 20;
+            case 'C' -> trabajador.horasTrabajadas() * 15;
+            case 'D' -> trabajador.horasTrabajadas() * 10;
+            default -> 0;
+        };
 
 
-        // Mostrar el sueldo con un ejemplo
+        // Mostrar el sueldo
         System.out.println("El sueldo es: " + sueldo);
 
 

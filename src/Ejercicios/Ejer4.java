@@ -8,69 +8,38 @@ public class Ejer4 {
         Un comerciante se dedica a la venta de sillas únicamente. Vende tres tipos de sillas: tipo A, tipo B y Tipo C los precios son 20,
         35 y 50 soles respectivamente cada silla. Por cada cinco sillas compradas del tipo A, del tipo B o del tipo C los clientes reciben un
         descuento de 3%, 5% y 7%, las demás se cobran a precio normal.
-        Hacer un programa para ingresar el tipo de Sillas a comprar, el número de sillas y reportar el importe a pagar.   --> usar Scanner para la entrada de datos
+        Hacer un programa para ingresar el tipo de Sillas a comprar, el número de sillas y reportar el importe a pagar.
          */
 
-        // Declarar variables
-        int tipoSilla = 0;
-        int cantidadSillas = 0;
-        double precioSilla = 0;
-        double descuento = 0;
-        double importe = 0;
 
-        // capturar los datos con Scanner
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese el tipo de silla: A = 1, B = 2, C = 3");
-        tipoSilla = sc.nextInt();
-        System.out.println("Ingrese la cantidad de sillas: ");
-        cantidadSillas = sc.nextInt();
+        // Declarar la clase Silla
+        record Silla(String tipo, int cantidad) {}
 
 
-        // Calcular el importe
-        switch (tipoSilla) {
-            case 1 -> {
-                precioSilla = 20;
-                importe = precioSilla * cantidadSillas;
-                if (cantidadSillas >= 5) {
-                    descuento = importe * 0.03;
-                    importe -= descuento;
-                }
-            }
-            case 2 -> {
-                precioSilla = 35;
-                importe = precioSilla * cantidadSillas;
-                if (cantidadSillas >= 5) {
-                    descuento = importe * 0.05;
-                    importe -= descuento;
-                }
-            }
-            case 3 -> {
-                precioSilla = 50;
-                importe = precioSilla * cantidadSillas;
-                if (cantidadSillas >= 5) {
-                    descuento = importe * 0.07;
-                    importe -= descuento;
-                }
-            }
-            default -> System.out.println("Tipo de silla no válido");
-        }
+        // Crear un Scanner
+        Scanner scanner = new Scanner(System.in);
 
-        // Mostrar el importe 
+        // Leer el tipo de silla
+        System.out.print("Ingrese el tipo de silla: ");
+        String tipo = scanner.nextLine();
 
-        System.out.println("El importe es: " + importe);
+        // Leer la cantidad de sillas
+        System.out.print("Ingrese la cantidad de sillas: ");
+        int cantidad = scanner.nextInt();
 
-        // Mostrar el descuento
-        System.out.println("El descuento es: " + descuento);
+        // Crear una silla
+        Silla silla = new Silla(tipo, cantidad);
 
-        // Mostrar el precio de la silla
-        System.out.println("El precio de la silla es: " + precioSilla);
+        // Calcular el importe a pagar
+        double importe = switch (silla.tipo()) {
+            case "A" -> silla.cantidad() * 20 * (silla.cantidad() / 5 >= 1 ? 0.97 : 1);
+            case "B" -> silla.cantidad() * 35 * (silla.cantidad() / 5 >= 1 ? 0.95 : 1);
+            case "C" -> silla.cantidad() * 50 * (silla.cantidad() / 5 >= 1 ? 0.93 : 1);
+            default -> 0;
+        };
 
-        // Mostrar la cantidad de sillas
-        System.out.println("La cantidad de sillas es: " + cantidadSillas);
-
-        // Mostrar el tipo de silla -
-        System.out.println("El tipo de silla es: " + tipoSilla);
+        // Mostrar el importe a pagar
+        System.out.println("El importe a pagar es: " + importe);
 
 
 

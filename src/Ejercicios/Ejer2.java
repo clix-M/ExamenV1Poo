@@ -19,57 +19,36 @@ public class Ejer2 {
         Por otro lado, si el sueldo bruto del vendedor es mayor a S/. 3500, se efectúa un descuento igual al 15% del sueldo bruto; en caso contrario,
         *  se efectúa un descuento igual al 10% del sueldo bruto.Hacer un programa que determine el sueldo básico, la comisión,
         * el sueldo bruto, el descuento y el sueldo neto de un vendedor de la empresa.
-
         * */
 
-        // Declarar variables
-        int categoria = 1;
-        double sueldoBasico = 1250;
-        double comision = 0;
-        double sueldoBruto = 0;
-        double descuento = 0;
-        double sueldoNeto = 0;
-        double montoTotalVendido = 0;
+        // Declarar la clase Vendedor
+        record Vendedor(String nombre, int categoria, double montoVendido) {}
 
-        // Calcular la comisión
-        switch (categoria) {
-            case 1 -> comision = montoTotalVendido * 0.0425;
-            case 2 -> comision = montoTotalVendido * 0.13;
-            case 3 -> comision = montoTotalVendido * 0.1175;
-            default -> System.out.println("Categoría no válida");
-        }
+        // Crear un vendedor
+        Vendedor vendedor = new Vendedor("Juan", 1, 1000);
 
         // Calcular el sueldo bruto
-
-        sueldoBruto = sueldoBasico + comision;
+        double sueldoBruto = switch (vendedor.categoria()) {
+            case 1 -> 1250 + vendedor.montoVendido() * 0.0425;
+            case 2 -> 1250 + vendedor.montoVendido() * 0.13;
+            case 3 -> 1250 + vendedor.montoVendido() * 0.1175;
+            default -> 0;
+        };
 
         // Calcular el descuento
-        if (sueldoBruto > 3500) {
-            descuento = sueldoBruto * 0.15;
-        } else {
-            descuento = sueldoBruto * 0.1;
-        }
+        double descuento = sueldoBruto > 3500 ? sueldoBruto * 0.15 : sueldoBruto * 0.1;
 
         // Calcular el sueldo neto
-        sueldoNeto = sueldoBruto - descuento;
+        double sueldoNeto = sueldoBruto - descuento;
 
-        // Mostrar el sueldoneto
 
-        System.out.println("El sueldo neto es: " + sueldoNeto);
-
-        // Mostrar el sueldo bruto
-        System.out.println("El sueldo bruto es: " + sueldoBruto);
-
-        // Mostrar el descuento
-        System.out.println("El descuento es: " + descuento);
-
-        // Mostrar la comisión
-        System.out.println("La comisión es: " + comision);
-
-        // Mostrar el sueldo básico
-        System.out.println("El sueldo básico es: " + sueldoBasico);
-
-        
+        System.out.println(
+                "El sueldo neto es: " + sueldoNeto +
+                        "\nEl sueldo bruto es: " + sueldoBruto +
+                        "\nEl descuento es: " + descuento +
+                        "\nLa comisión es: " + (sueldoBruto - 1250) +
+                "\nEl sueldo básico es: " + 1250
+        );
 
 
     }
